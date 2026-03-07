@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0f;
+  --color-surface: #111118;
+  --color-card: #16161f;
+  --color-border: #2a2a3a;
+  --color-primary: #00d4ff;
+  --color-success: #00ff88;
+  --color-warning: #ffaa00;
+  --color-danger: #ff4455;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8888aa;
+
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-inter m-0 p-0 min-h-screen antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight m-0;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-sm bg-white/5 border border-white/10;
+  }
+
+  .glow-primary {
+    @apply shadow-[0_0_20px_rgba(0,212,255,0.3)];
+  }
+
+  .glow-success {
+    @apply shadow-[0_0_20px_rgba(0,255,136,0.3)];
+  }
+
+  .glow-danger {
+    @apply shadow-[0_0_20px_rgba(255,68,85,0.3)];
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500;
+  }
+}
